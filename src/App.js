@@ -1,19 +1,73 @@
-import './App.css';
-import './styles.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import MoviesGrid from './components/MoviesGrid';
+import "./App.css";
+import "./styles.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import MoviesGrid from "./components/MoviesGrid";
+import Watchlist from "./components/Watchlist";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [movies, setMovies] = useState([]);
+  const [watchlist, setWatchlist] = useState([]);
+
+  useEffect(() => {
+    fetch("movies.json")
+      .then((response) => response.json())
+      .then((data) => setMovies(data));
+  }, []);
+
+  const toggleWatchlist = (movieId) => {
+    setWatchlist((prev) =>
+      prev.includes(movieId)
+        ? prev.filter((id) => id !== movieId)
+        : [...prev, movieId]
+    );
+  };
+
   return (
     <div className="App">
-     <div className='container'>
-      <Header></Header>
-      <MoviesGrid></MoviesGrid>
-      </div> 
+      <div className="container">
+        <Header></Header>
 
+        <Router>
+          <nav>
+            <ul class="nav justify-content-center">
+              <li class="nav-item">
+                <Link to="/">Home</Link>
+              </li>
+              <li class="nav-item">
+                <Link to="/watchlist">Watchlist</Link>
+              </li>
+            </ul>
+          </nav>
 
-      <Footer></Footer>         
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <MoviesGrid
+                  movies={movies}
+                  watchlist={watchlist}
+                  toggleWatchlist={toggleWatchlist}
+                />
+              }
+            />
+            <Route
+              path="/watchlist"
+              element={
+                <Watchlist
+                  movies={movies}
+                  watchlist={watchlist}
+                  toggleWatchlist={toggleWatchlist}
+                />
+              }
+            />
+          </Routes>
+        </Router>
+      </div>
+
+      <Footer></Footer>
     </div>
   );
 }
