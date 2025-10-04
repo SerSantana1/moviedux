@@ -30,7 +30,7 @@ function App() {
       <div className="container">
         <Header></Header>
 
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <nav>
             <ul className="nav justify-content-center">
               <li className="nav-item">
