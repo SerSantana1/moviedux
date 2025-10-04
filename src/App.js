@@ -11,6 +11,8 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
 
+  const basename = process.env.PUBLIC_URL || "/";
+
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/movies.json`)
       .then((response) => response.json())
@@ -30,7 +32,7 @@ function App() {
       <div className="container">
         <Header></Header>
 
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router basename={basename}>
           <nav>
             <ul className="nav justify-content-center">
               <li className="nav-item">
