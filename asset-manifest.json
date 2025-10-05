@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/moviedux/static/css/main.b1b789ba.css",
-    "main.js": "/moviedux/static/js/main.2c3f1d83.js",
-    "static/js/453.3a751163.chunk.js": "/moviedux/static/js/453.3a751163.chunk.js",
-    "index.html": "/moviedux/index.html",
-    "main.b1b789ba.css.map": "/moviedux/static/css/main.b1b789ba.css.map",
-    "main.2c3f1d83.js.map": "/moviedux/static/js/main.2c3f1d83.js.map",
-    "453.3a751163.chunk.js.map": "/moviedux/static/js/453.3a751163.chunk.js.map"
+    "main.css": "/static/css/main.b1b789ba.css",
+    "main.js": "/static/js/main.541262f4.js",
+    "static/js/453.3a751163.chunk.js": "/static/js/453.3a751163.chunk.js",
+    "index.html": "/index.html",
+    "main.b1b789ba.css.map": "/static/css/main.b1b789ba.css.map",
+    "main.541262f4.js.map": "/static/js/main.541262f4.js.map",
+    "453.3a751163.chunk.js.map": "/static/js/453.3a751163.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b1b789ba.css",
-    "static/js/main.2c3f1d83.js"
+    "static/js/main.541262f4.js"
   ]
 }
