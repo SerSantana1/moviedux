@@ -22,7 +22,7 @@ export default function MoviesGrid({ movies, watchlist, toggleWatchlist }) {
   const mathcesGenre = (movie, genre) => {
     return (
       genre === "All genres" ||
-      movie.genre.toLowerCase === genre.toLocaleLowerCase
+      movie.genre.toLowerCase() === genre.toLowerCase()
     );
   };
 
@@ -85,10 +85,10 @@ export default function MoviesGrid({ movies, watchlist, toggleWatchlist }) {
             value={rating}
             onChange={handleRatingChange}
           >
-            <option value="All genres">All</option>
-            <option value="Action">Good</option>
-            <option value="Comedy">Ok</option>
-            <option value="Drama">Bad</option>
+            <option value="All">All</option>
+            <option value="Good">Good</option>
+            <option value="Ok">Ok</option>
+            <option value="Bad">Bad</option>
           </select>
         </div>
       </div>
