@@ -32,7 +32,7 @@ function App() {
       <div className="container">
         <Header></Header>
 
-        <Router basename={basename}>
+        <Router basename="/moviedux">
           <nav>
             <ul className="nav justify-content-center">
               <li className="nav-item">
